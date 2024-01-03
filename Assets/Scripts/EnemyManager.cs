@@ -56,6 +56,8 @@ public class EnemyManager : MonoBehaviour
     
         Enemyanim.SetTrigger("dead");
 
+        Destroy(gameObject);
+
        
     }
 }
