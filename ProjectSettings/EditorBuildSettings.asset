@@ -6,6 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MenuScence.unity
+    guid: 142995eb8caf60140995a8300fbd499e
+  - enabled: 1
+    path: Assets/Scenes/Tatakae.unity
+    guid: a9400f6cb45756244a2a8811c04fb1fe
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 72f456acca9938644a7a5d789ee8f92b
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 195859ddbf3e9564187857ada6c566d6
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

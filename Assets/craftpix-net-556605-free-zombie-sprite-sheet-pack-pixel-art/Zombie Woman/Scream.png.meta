@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5b797b18c7fc23a4da337ad7561dd82f
+guid: 44c0b586679495141b4047d6194ae363
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -224,12 +224,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Scream_0: -698445991872946889
-      Scream_1: -7753230735383741357
-      Scream_2: 1643304270273261513
-      Scream_3: -7271889780145406184
-      Scream_4: -6433560901112551847
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

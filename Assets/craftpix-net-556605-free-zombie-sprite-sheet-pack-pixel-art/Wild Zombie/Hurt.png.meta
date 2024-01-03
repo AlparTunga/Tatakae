@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee98b7782ea1dbf4dbfbcb7cc15fca91
+guid: da48b5d7bed57ce42b8642d145e01c64
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -224,12 +224,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Hurt_0: -2048800907179887802
-      Hurt_1: 490842205202310979
-      Hurt_2: -3720053754089064719
-      Hurt_3: 5649970053243570431
-      Hurt_4: -371187646486735994
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

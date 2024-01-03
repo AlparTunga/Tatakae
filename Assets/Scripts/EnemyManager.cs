@@ -5,56 +5,57 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float health;
-    bool dead =false;
-    Animator playerAnimation;
-    private EnemyBehaviour enemyParent;
-    
+    public float damage;
+    public float maxHealth = 100; // Düþmanýn maksimum saðlýk deðeri
+    private float currentHealth; // Mevcut saðlýk deðeri
+    public int comboAttack = 0;
 
-    private void Awake()
-    {
-        enemyParent = GetComponentInParent<EnemyBehaviour>();
-    }
+    Animator Enemyanim;
+
+    // Düþmanýn maksimum saðlýk deðeri
+
+
+    // Start is called before the first frame update
     void Start()
     {
-        playerAnimation = GetComponent<Animator>();
+        currentHealth = maxHealth;
+        Enemyanim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        AmIdead();
+   
     }
-
-
-    public void TakeDamage(float damage)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (health - damage > 0)
+        if (collision.tag == "Player")
         {
-            health -= damage;
+            collision.GetComponent<Playermanager>().Getdamage(damage);
 
         }
-        else
-        {
-            health = 0;
-        }
-        AmIdead();
+
+
     }
-    void AmIdead()
+    public void TakeDamage(float damageAmount)
     {
-        if (health <= 0)
+        currentHealth -= damageAmount;
+        Enemyanim.SetTrigger("Hurtenemy");
+
+        if (currentHealth <= 0)
         {
-            dead = true;
-            playerAnimation.SetTrigger("isDead");
-            playerAnimation.SetBool("isWalk",false);
-            playerAnimation.SetBool("isAttack",false);
-            playerAnimation.SetBool("isBite",false);
-            enemyParent.moveSpeed = 0;
-            Destroy(gameObject, 5);
+            Die();
         }
     }
-        
 
+    void Die()
+    {
+        // Düþmanýn ölüm iþlemleri burada yapýlýr
+        Debug.Log("Enemy died!");
+    
+        Enemyanim.SetTrigger("dead");
 
+       
+    }
 }

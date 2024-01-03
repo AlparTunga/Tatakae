@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e4c2920383dd1448beb0e8558ed09e2
+guid: 859c48bdebd8b7245b9b02ac353fc0f0
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -1256,55 +1256,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Warrior_2_Spritelist_0: -2250191970850190742
-      Warrior_2_Spritelist_1: 1248808984950701798
-      Warrior_2_Spritelist_10: 7759902462261355970
-      Warrior_2_Spritelist_11: 3909422684936524604
-      Warrior_2_Spritelist_12: -8528011256594943333
-      Warrior_2_Spritelist_13: -4507462867755110917
-      Warrior_2_Spritelist_14: -3572787716228803422
-      Warrior_2_Spritelist_15: 4338770427152696848
-      Warrior_2_Spritelist_16: 7779272317679330950
-      Warrior_2_Spritelist_17: -8162589220774044485
-      Warrior_2_Spritelist_18: -3227372135319941453
-      Warrior_2_Spritelist_19: 1831419336650388220
-      Warrior_2_Spritelist_2: -3637023097619008372
-      Warrior_2_Spritelist_20: -4982909928202831824
-      Warrior_2_Spritelist_21: 8675446236473371942
-      Warrior_2_Spritelist_22: -5385216917252230246
-      Warrior_2_Spritelist_23: -8922147322047129383
-      Warrior_2_Spritelist_24: -5140810505596841314
-      Warrior_2_Spritelist_25: -163213586459226672
-      Warrior_2_Spritelist_26: 2094812977384490393
-      Warrior_2_Spritelist_27: 977456398109313607
-      Warrior_2_Spritelist_28: -2531677457733841639
-      Warrior_2_Spritelist_29: 5371264173026066258
-      Warrior_2_Spritelist_3: -9160417119915076561
-      Warrior_2_Spritelist_30: 5967527047458061458
-      Warrior_2_Spritelist_31: -459845067292549788
-      Warrior_2_Spritelist_32: 699552071370125069
-      Warrior_2_Spritelist_33: 5190929772914728892
-      Warrior_2_Spritelist_34: -5120477168730817109
-      Warrior_2_Spritelist_35: -5789508945439068132
-      Warrior_2_Spritelist_36: 917525349964565351
-      Warrior_2_Spritelist_37: -2942020671115691754
-      Warrior_2_Spritelist_38: -2519875462166226330
-      Warrior_2_Spritelist_39: -8583405983777690491
-      Warrior_2_Spritelist_4: 2334296945916287282
-      Warrior_2_Spritelist_40: -2780113909498026544
-      Warrior_2_Spritelist_41: 6541530862661503822
-      Warrior_2_Spritelist_42: 7911842920855015906
-      Warrior_2_Spritelist_43: -6587314108722244813
-      Warrior_2_Spritelist_44: -6449643469407331973
-      Warrior_2_Spritelist_45: -3423770181720993237
-      Warrior_2_Spritelist_46: 2234485019744554317
-      Warrior_2_Spritelist_47: -7795761329376114146
-      Warrior_2_Spritelist_5: -7439757317578333805
-      Warrior_2_Spritelist_6: -1114101979958482586
-      Warrior_2_Spritelist_7: -4406067619459627615
-      Warrior_2_Spritelist_8: 8192143558323865016
-      Warrior_2_Spritelist_9: -4828599057396795814
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
