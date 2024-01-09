@@ -12,6 +12,7 @@ public class Playermanager : MonoBehaviour
     bool dead =false;
     Animator playerAnimation;
     public Slider slider;
+    [SerializeField] private AudioSource HurtEffect;
     void Start()
     {
         playerAnimation = GetComponent<Animator>();
@@ -31,6 +32,7 @@ public class Playermanager : MonoBehaviour
     {
         if (health - damage > 0)
         {
+            HurtEffect.Play();
             health -= damage;
             playerAnimation.SetTrigger("Hurtanim");
 

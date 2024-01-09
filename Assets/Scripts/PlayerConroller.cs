@@ -28,6 +28,9 @@ public class PlayerConroller : MonoBehaviour
     public float özelYetenekDolumHýzý = 3f;
     public float özelYetenekSeviye = 100f;
     public Slider özelYetenekBar;
+    [SerializeField] private AudioSource AttackEffect;
+    [SerializeField] private AudioSource FullAttackEffect;
+    [SerializeField] private AudioSource JumpEffect;
 
     public Transform groundposition;
     public Transform Attackpoint;
@@ -62,12 +65,14 @@ public class PlayerConroller : MonoBehaviour
         }
         if (Input.GetAxis("Vertical") > 0 && isGronded && (JumpTime < Time.timeSinceLevelLoad))
         {
+            JumpEffect.Play();
             JumpTime = Time.timeSinceLevelLoad +JumpFrekans;
             PlayerJump();
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
             PlayerAnimation.SetTrigger("Attackanim");
+            AttackEffect.Play();
             Attack();
 
         }
@@ -158,6 +163,7 @@ public class PlayerConroller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && mevcutÖzelYetenekSeviye >= özelYetenekSeviye)
         {
             KullanÖzelYetenek();
+            FullAttackEffect.Play();
             mevcutÖzelYetenekSeviye = 0f;
         }
     }

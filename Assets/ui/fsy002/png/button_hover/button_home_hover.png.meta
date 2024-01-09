@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      button_home_hover_0: -8702272933819064008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

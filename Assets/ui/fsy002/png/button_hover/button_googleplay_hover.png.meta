@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      button_googleplay_hover_0: -2057539284118452825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

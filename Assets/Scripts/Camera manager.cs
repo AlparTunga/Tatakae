@@ -6,17 +6,19 @@ using static UnityEngine.GraphicsBuffer;
 public class Cameramanager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform target;
+    // Start is called before the first frame update
+    public Transform takipEdilenNesne; // Kameranýn takip ettiði nesne
+    public Vector2 minSinir; // Kameranýn minimum sýnýrý
+    public Vector2 maxSinir; // Kameranýn maksimum sýnýrý
 
-    public float CameraSpeed;
-    void Start()
+    void LateUpdate()
     {
-        
-    }
+        if (takipEdilenNesne != null)
+        {
+            float x = Mathf.Clamp(takipEdilenNesne.position.x, minSinir.x, maxSinir.x);
+            float y = Mathf.Clamp(takipEdilenNesne.position.y, minSinir.y, maxSinir.y);
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = Vector3.Slerp(transform.position, new Vector3(target.position.x, target.position.y, transform.position.z), CameraSpeed);
+            transform.position = new Vector3(x, y, transform.position.z);
+        }
     }
 }
