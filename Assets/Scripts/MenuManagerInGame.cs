@@ -8,11 +8,11 @@ public class MenuManagerInGame : MonoBehaviour
 {
     public GameObject InGameScren, PauseScren;
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -24,17 +24,13 @@ public class MenuManagerInGame : MonoBehaviour
         }
 
     }
-
-
-
-
+    
 
     public void PlayButton()
     {
         Time.timeScale = 1;
         InGameScren.SetActive(true);
         PauseScren.SetActive(false);
-
 
     }
 

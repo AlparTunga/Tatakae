@@ -29,17 +29,16 @@ public class EnemyBehaviour : MonoBehaviour
     private bool cooling;
     private float intTimer;
     private EnemyManager enemyParent;
-
     public Transform leftLimit;
     public Transform rightLimit;
-
+    [SerializeField] public AudioSource Sound;
      void Awake()
      {
-         
+         intTimer = timer;
          SelectTarget();
-         timer = intTimer;
          anim = GetComponent<Animator>();
          enemyParent = GetComponentInParent<EnemyManager>();
+         Sound = GetComponent<AudioSource>();
      }
    
 
@@ -47,7 +46,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
         if (!attackMode)
         {
             Move();
@@ -62,6 +61,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             EnemyLogic();
         }
+        
     }
 
     void EnemyLogic()
@@ -73,11 +73,13 @@ public class EnemyBehaviour : MonoBehaviour
         }
         if (attackDistance >= distance && cooling == false)
         {
-            StartCoroutine(AttackAndBite());
+            AttackAndBite();
         }
         if (cooling)
         {
             Cooldown();
+            anim.SetBool("isAttack", false);
+            anim.SetBool("isBite", false);
         }
     }
 
@@ -88,8 +90,6 @@ public class EnemyBehaviour : MonoBehaviour
         {
             cooling = false;
             timer = intTimer;
-            anim.SetBool("isAttack", false);
-            anim.SetBool("isBite", false);
         }
     }
 
@@ -101,40 +101,44 @@ public class EnemyBehaviour : MonoBehaviour
         anim.SetBool("isBite",false);
         
     }
-    
-    IEnumerator AttackAndBite()
+
+    void AttackAndBite()
     {
         timer = intTimer;
         attackMode = true;
         anim.SetBool("isWalk", false);
-        
-    
+        //anim.SetBool("isAttack", false);
+        anim.SetBool("isBite", false);
+        anim.SetBool("isAttack", false);
         // Rastgele olarak hangi animasyonu oynatacağınızı belirleyin
-        bool isAttack = Random.Range(0, 2) == 1; // 0 veya 1 döndürür
-    
-        if (isAttack)
+        int isAttack = Random.Range(0, 100); 
+        
+
+        if (isAttack % 2 == 0)
         {
             // Attack
             anim.SetBool("isAttack", true);
-            anim.SetBool("isBite",false);
-            yield return new WaitForSeconds(1.5f);
-            //anim.SetBool("isAttack", false);
+            anim.SetBool("isBite", false);
+           
         }
         else
         {
             // Bite
             anim.SetBool("isBite", true);
-            anim.SetBool("isAttack",false);
-            yield return new WaitForSeconds(1.5f);
-            //anim.SetBool("isBite", false);
+            anim.SetBool("isAttack", false);
+            
         }
-        
     }
+
     void Move()
     {
         if (enemyParent.health > 0)
         {
             anim.SetBool("isWalk",true);
+            if (!Sound.isPlaying)
+            {
+                Sound.Play();
+            }
         }
         anim.SetBool("isAttack",false);
         anim.SetBool("isBite", false);
@@ -183,24 +187,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         cooling = true;
     }
-
-    // void Attack()
-    // {
-    //     timer = intTimer;
-    //     attackMode = true;
-    //     
-    //     anim.SetBool("isWalk",false);
-    //     anim.SetBool("isAttack", true);
-    // }
-    //
-    // void Bite()
-    // {
-    //     timer = intTimer;
-    //     attackMode = true;
-    //          
-    //     anim.SetBool("isWalk",false);
-    //     anim.SetBool("isBite", true);
-    // }
+    
     
 }
 

@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - Attack
   - Enemy
+  - CheckPoint
+  - end
   layers:
   - Default
   - TransparentFX

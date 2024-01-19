@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,8 @@ public class MenuManager : MonoBehaviour
     }
     public void PlayButton()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
+        PlayerConroller.lastCheckPointPosition= PlayerConroller.startposition;
     }
     public void exitButton()
     {

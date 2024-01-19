@@ -7,7 +7,7 @@ using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.UI;
 using static Unity.Burst.Intrinsics.X86.Avx;
-
+using UnityEngine.SceneManagement;
 public class PlayerConroller : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -37,8 +37,20 @@ public class PlayerConroller : MonoBehaviour
     public float cap;
     public LayerMask layercheck;
 
+   public static Vector2 lastCheckPointPosition = new Vector2((float)-86.51,(float)41.49);
+   public static Vector2 startposition=new Vector2((float)-86.51,(float)41.49);
+    private Playermanager playerParent;
+
+    private void Awake()
+    {
+        playerParent = GetComponentInParent<Playermanager>();
+        respawn();
+    }
+    
+
     void Start()
     {
+        
         if (özelYetenekBar != null)
         {
             özelYetenekBar.maxValue = özelYetenekSeviye;
@@ -46,6 +58,7 @@ public class PlayerConroller : MonoBehaviour
         }
         rigidPlayer = GetComponent<Rigidbody2D>();
         PlayerAnimation = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -79,12 +92,24 @@ public class PlayerConroller : MonoBehaviour
         DolumKontrolu();
         KullanmaKontrolu();
         GüncelleUI();
+       
+        
+    }
 
+   
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("CheckPoint"))
+        {
+            playerParent.health += 20;
+            lastCheckPointPosition = transform.position;
+        }
 
-
-
-
+        if (other.tag == "end")
+        {
+            SceneManager.LoadScene(2);
+        }
     }
     void HorizontalMove()
     {
@@ -189,6 +214,14 @@ public class PlayerConroller : MonoBehaviour
         }
     }
 
+    public void respawn()
+    {
+        GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPosition;
+        
+    }
+   
+   
+    
 
 
 
