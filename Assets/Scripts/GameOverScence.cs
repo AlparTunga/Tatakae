@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverSceneScript : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    
-   
+    private PlayerConroller res;
+    private void Awake()
+    {
+        res = GetComponentInParent<PlayerConroller>();
+    }
     // Update is called once per frame
    
     public void RePlayButton()

@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
     }
     public void PlayButton()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
         PlayerConroller.lastCheckPointPosition= PlayerConroller.startposition;
     }
     public void exitButton()

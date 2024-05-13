@@ -64,7 +64,6 @@ MonoBehaviour:
   damage: 10
   leftLimit: {fileID: 0}
   rightLimit: {fileID: 0}
-  Sound: {fileID: 0}
 --- !u!212 &6456646459047689515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -232,12 +231,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258653081735953184}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d2f0242c4102fe046b86613c32a3af44, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.13
   m_Pitch: 1
   Loop: 0
   Mute: 0

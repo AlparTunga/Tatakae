@@ -77,7 +77,6 @@ MonoBehaviour:
   damage: 10
   leftLimit: {fileID: 0}
   rightLimit: {fileID: 0}
-  Sound: {fileID: 0}
 --- !u!212 &4365149385126903929
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -237,7 +236,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d2f0242c4102fe046b86613c32a3af44, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.13
   m_Pitch: 1
   Loop: 0
   Mute: 0

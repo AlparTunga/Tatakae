@@ -54,10 +54,6 @@ public class EnemyManager : MonoBehaviour
             playerAnimation.SetBool("isAttack", false);
             playerAnimation.SetBool("isBite", false);
             enemyParent.moveSpeed = 0;
-            if (enemyParent.Sound.isPlaying)
-            {
-                enemyParent.Sound.Stop();
-            }
 
             // Çarpışmayı devre dışı bırak ve belirli bir süre sonra tekrar etkinleştir
             StartCoroutine(DisableCollisionTemporarily());

@@ -31,14 +31,14 @@ public class EnemyBehaviour : MonoBehaviour
     private EnemyManager enemyParent;
     public Transform leftLimit;
     public Transform rightLimit;
-    [SerializeField] public AudioSource Sound;
+    //[SerializeField] private AudioSource Sound;
      void Awake()
      {
          intTimer = timer;
          SelectTarget();
          anim = GetComponent<Animator>();
          enemyParent = GetComponentInParent<EnemyManager>();
-         Sound = GetComponent<AudioSource>();
+         //Sound = GetComponent<AudioSource>();
      }
    
 
@@ -135,10 +135,10 @@ public class EnemyBehaviour : MonoBehaviour
         if (enemyParent.health > 0)
         {
             anim.SetBool("isWalk",true);
-            if (!Sound.isPlaying)
-            {
-                Sound.Play();
-            }
+            // if (!Sound.isPlaying)
+            // {
+            //     Sound.Play();
+            // }
         }
         anim.SetBool("isAttack",false);
         anim.SetBool("isBite", false);

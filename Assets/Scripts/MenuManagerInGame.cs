@@ -9,9 +9,11 @@ public class MenuManagerInGame : MonoBehaviour
     public GameObject InGameScren, PauseScren;
     // Start is called before the first frame update
 
+    private PlayerConroller res;
+
     private void Awake()
     {
-        
+        res = GetComponentInParent<PlayerConroller>();
     }
     // Update is called once per frame
     void Update()
